@@ -1,4 +1,4 @@
-package com.maming.common.mock;
+package com.maming.common.funxing.demo2;
 
 public class Person {
 
@@ -20,5 +20,4 @@ public class Person {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-
 }

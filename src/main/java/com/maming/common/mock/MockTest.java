@@ -12,33 +12,33 @@ import org.mockito.stubbing.Answer;
 public class MockTest {
 
 	@Test
-	public void controllTest(){
-		
+	public void controllTest() {
+
 		Service service2 = Mockito.mock(Service.class);
-		
-		Person person = new Person();  
+
+		Person person = new Person();
 		person.setName("aa");
 		person.setSex("man");
 
-	    Controller controller = new Controller();
-	    
-	    try {
-			Field serviceField = controller.getClass().getDeclaredField("service");
+		Controller controller = new Controller();
+
+		try {
+			Field serviceField = controller.getClass().getDeclaredField(
+					"service");
 			serviceField.setAccessible(true);
 			serviceField.set(controller, service2);
-			
+
 			Mockito.when(service2.add()).thenReturn(8);
-			
-			
-			final Map<String,String> map = new HashMap<String,String>();
+
+			final Map<String, String> map = new HashMap<String, String>();
 			map.put("aa", "bbb");
 			map.put("cc", "ddd");
-			Answer<Map<String,String>> aswser = new Answer<Map<String,String>>() {    
-			    public Map<String,String> answer(InvocationOnMock invocation) {    
-			        return map;
-			    }   
-			};  
-			
+			Answer<Map<String, String>> aswser = new Answer<Map<String, String>>() {
+				public Map<String, String> answer(InvocationOnMock invocation) {
+					return map;
+				}
+			};
+
 			Mockito.when(service2.getMap()).then(aswser);
 			controller.controll(person);
 		} catch (NoSuchFieldException e) {
