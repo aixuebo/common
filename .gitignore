@@ -1,0 +1,10 @@
+/out
+/target
+/.idea
+/.settings
+/statistics.iml
+/.classpath
+/.project
+/src/main/java/META-INF
+/src/main/java/com/coohua/statistics/smalljob
+/src/main/java/com/coohua/statistics/test
