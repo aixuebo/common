@@ -1,5 +1,7 @@
 package com.maming.common.funxing.demo2;
 
+import java.io.FileOutputStream;
+
 public class Test {
 
 	public ReadInterface test1(String type){
@@ -14,7 +16,7 @@ public class Test {
 			readInterface =
 	            new InterfaceDemo<PersonFactory,Person>(personFactory);
 		}
-		
+
         return readInterface;
 	}
 	
